@@ -1,12 +1,13 @@
+import STRING_RESOURCES from "@/assets/strings";
 import { GluestackUIProvider } from "@/components/ui/gluestack-ui-provider";
 import PLATFORM from "@/constants/platform";
 import FontAwesome from "@expo/vector-icons/FontAwesome";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { useFonts } from "expo-font";
 import { Stack } from "expo-router";
 import * as SplashScreen from "expo-splash-screen";
 import { useEffect } from "react";
 import "../global.css";
-import STRING_RESOURCES from "@/assets/strings";
 
 export { ErrorBoundary } from "expo-router";
 
@@ -36,11 +37,18 @@ export default function RootLayout() {
 }
 
 function RootLayoutNav() {
+  const queryClient = new QueryClient();
+
   return (
-    <GluestackUIProvider mode="light">
-      <Stack screenOptions={{ headerShown: PLATFORM.IS_MOBILE }}>
-        <Stack.Screen name="index" options={{ title: STRING_RESOURCES.home }} />
-      </Stack>
-    </GluestackUIProvider>
+    <QueryClientProvider client={queryClient}>
+      <GluestackUIProvider mode="light">
+        <Stack screenOptions={{ headerShown: PLATFORM.IS_MOBILE }}>
+          <Stack.Screen
+            name="index"
+            options={{ title: STRING_RESOURCES.home }}
+          />
+        </Stack>
+      </GluestackUIProvider>
+    </QueryClientProvider>
   );
 }
