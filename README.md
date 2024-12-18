@@ -25,6 +25,12 @@ In the output, you'll find options to open the app in a
 
 This project uses [file-based routing](https://docs.expo.dev/router/introduction).
 
+3. Start all the tests
+
+   ```bash
+    yarn test
+   ```
+
 ## App dependencies
 
 The app uses [gluestack ui](https://gluestack.io/) library for universal components.
