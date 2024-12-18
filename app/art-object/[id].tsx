@@ -8,6 +8,7 @@ import { ScrollView } from "@/components/ui/scroll-view";
 import { Text } from "@/components/ui/text";
 import { VStack } from "@/components/ui/vstack";
 import PLATFORM from "@/constants/platform";
+import ArtObjectSection from "@/features/art-object/ArtObjectSection";
 import { useNavigation } from "expo-router";
 import { useLocalSearchParams } from "expo-router/build/hooks";
 import { useLayoutEffect } from "react";
@@ -69,10 +70,17 @@ function ArtObject() {
                   className: "col-span-12 md:col-span-4 lg:col-span-4",
                 }}
               >
-                <VStack
-                  className="bg-background-1 p-4 pb-0"
-                  space="xl"
-                ></VStack>
+                <VStack className="bg-background-1 p-4 pb-0" space="xl">
+                  <ArtObjectSection label="Medium" text={data.physicalMedium} />
+                  <ArtObjectSection
+                    label="Object Number"
+                    text={data.objectNumber}
+                  />
+                  <ArtObjectSection
+                    label="Object types"
+                    text={data.objectTypes.join(", ")}
+                  />
+                </VStack>
               </GridItem>
             </Grid>
           </VStack>

@@ -62,6 +62,7 @@ The project structure is as follows:
 
 /features
    ├── home       # components and hooks for the home screen
+   ├── art-object       # components for the art-object screen
 
 /api
    ├── collection/       # the collection api to retrieve Rijksmuseum objects

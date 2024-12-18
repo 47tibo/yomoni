@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ArtObjectSection renders correctly with given props 1`] = `
+<View>
+  <Text
+    accessibilityRole="header"
+    style={
+      {
+        "fontSize": 32,
+        "fontWeight": "bold",
+        "marginVertical": 42.56,
+      }
+    }
+  >
+    Test Label
+  </Text>
+  <Text
+    className="text-typography-700 font-body text-lg"
+  >
+    Test Text
+  </Text>
+</View>
+`;
