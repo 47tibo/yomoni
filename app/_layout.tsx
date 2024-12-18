@@ -6,6 +6,7 @@ import { Stack } from "expo-router";
 import * as SplashScreen from "expo-splash-screen";
 import { useEffect } from "react";
 import "../global.css";
+import STRING_RESOURCES from "@/assets/strings";
 
 export { ErrorBoundary } from "expo-router";
 
@@ -38,7 +39,7 @@ function RootLayoutNav() {
   return (
     <GluestackUIProvider mode="light">
       <Stack screenOptions={{ headerShown: PLATFORM.IS_MOBILE }}>
-        <Stack.Screen name="index" options={{ title: "Accueil" }} />
+        <Stack.Screen name="index" options={{ title: STRING_RESOURCES.home }} />
       </Stack>
     </GluestackUIProvider>
   );
