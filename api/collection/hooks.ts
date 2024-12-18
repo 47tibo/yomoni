@@ -1,8 +1,8 @@
+import { ArtObject, ArtObjectDetails } from "@/domain/art-object";
 import { useQuery } from "@tanstack/react-query";
-import { dtoToArtObjects } from "./adapters";
 import { API_KEY, BASE_URL } from "../constants";
-import { ArtObject } from "@/domain/art-object";
-import { RijksCollectionDto } from "./dtos";
+import { dtoToArtObjectDetails, dtoToArtObjects } from "./adapters";
+import { RijksCollectionDetailsDto, RijksCollectionDto } from "./dtos";
 
 export function useGetCollection(searchTerm: string) {
   return useQuery<ArtObject[]>({
@@ -13,6 +13,17 @@ export function useGetCollection(searchTerm: string) {
       );
       const dto: RijksCollectionDto = await response.json();
       return dtoToArtObjects(dto);
+    },
+  });
+}
+
+export function useGetArtObjectDetails(objectId: string) {
+  return useQuery<ArtObjectDetails>({
+    queryKey: ["art-object", objectId],
+    queryFn: async () => {
+      const response = await fetch(`${BASE_URL}/${objectId}?key=${API_KEY}`);
+      const dto: RijksCollectionDetailsDto = await response.json();
+      return dtoToArtObjectDetails(dto);
     },
   });
 }
