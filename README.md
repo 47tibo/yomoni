@@ -51,6 +51,9 @@ The project structure is as follows:
 /features
    ├── home       # components and hooks for the home screen
 
+/api
+   ├── collection/       # the collection api to retrieve Rijksmuseum objects
+
 /assets
    ├── images/          # Image assets
    ├── fonts/           # Font assets
@@ -58,6 +61,12 @@ The project structure is as follows:
 
 /components
    ├── ui/        # gluestack ui shared components
+
+/mocks # msw configuration to mock collection api
+
+/domain
+   ├── art-object/        # domain interfaces to handle entities
+
 ```
 
 ## API
