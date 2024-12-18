@@ -4,6 +4,7 @@ import { Image } from "@/components/ui/image";
 import { SafeAreaView } from "@/components/ui/safe-area-view";
 import { ScrollView } from "@/components/ui/scroll-view";
 import { VStack } from "@/components/ui/vstack";
+import SearchForm from "@/features/home/SearchForm";
 
 export default function Home() {
   return (
@@ -14,7 +15,10 @@ export default function Home() {
       >
         <HStack className="w-full bg-background-0 flex-grow justify-center">
           <VStack className="md:items-center md:justify-center flex-1 w-full p-9 md:gap-10 gap-16 md:m-auto md:w-1/2 h-full">
-            <Heading size="2xl">champ de recherche ici</Heading>
+            <SearchForm
+              onSubmit={(value) => console.log(value)}
+              defaultValue={"default value"}
+            />
           </VStack>
 
           <VStack
