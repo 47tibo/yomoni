@@ -39,6 +39,17 @@ This project uses [file-based routing](https://docs.expo.dev/router/introduction
 
 The app uses [gluestack ui](https://gluestack.io/) library for universal components.
 
+## API
+
+The API is the Rijksmuseum API. This API gives access to the Rijksmuseum catalog. The `collection` endpoint is used : 
+
+````
+https://www.rijksmuseum.nl/api/en/collection/
+https://www.rijksmuseum.nl/api/en/collection/BK-17496
+````
+
+It allows to search (via query parameter) and to get the detail of an art object (the second url).
+
 ## App structure
 
 The project structure is as follows:
@@ -47,6 +58,7 @@ The project structure is as follows:
 /app
    ├── _layout         # Entry point of the application
    ├── index      # Home screen
+   ├── art-object/[id]       # ArtObject screen that display the art object detail
 
 /features
    ├── home       # components and hooks for the home screen
@@ -68,14 +80,3 @@ The project structure is as follows:
    ├── art-object/        # domain interfaces to handle entities
 
 ```
-
-## API
-
-The API is the Rijksmuseum API. This API gives access to the Rijksmuseum catalog. The `collection` endpoint is used : 
-
-````
-https://www.rijksmuseum.nl/api/en/collection/
-https://www.rijksmuseum.nl/api/en/collection/BK-17496
-````
-
-It allows to search (via query parameter) and to get the detail of an art object (the second url).

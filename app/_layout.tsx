@@ -49,6 +49,7 @@ function RootLayoutNav() {
             name="index"
             options={{ title: STRING_RESOURCES.home }}
           />
+          <Stack.Screen name="art-object/:id" />
         </Stack>
       </GluestackUIProvider>
     </QueryClientProvider>
