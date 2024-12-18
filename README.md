@@ -36,12 +36,27 @@ The project structure is as follows:
 ```
 /app
    ├── _layout         # Entry point of the application
-   ├── index      # Main screen
+   ├── index      # Home screen
+
+/features
+   ├── home       # components and hooks for the home screen
 
 /assets
    ├── images/          # Image assets
    ├── fonts/           # Font assets
+   ├── strings           # string resources for texts in the app
 
 /components
    ├── ui/        # gluestack ui shared components
 ```
+
+## API
+
+The API is the Rijksmuseum API. This API gives access to the Rijksmuseum catalog. The `collection` endpoint is used : 
+
+````
+https://www.rijksmuseum.nl/api/en/collection/
+https://www.rijksmuseum.nl/api/en/collection/BK-17496
+````
+
+It allows to search (via query parameter) and to get the detail of an art object (the second url).
