@@ -28,3 +28,20 @@ This project uses [file-based routing](https://docs.expo.dev/router/introduction
 ## App dependencies
 
 The app uses [gluestack ui](https://gluestack.io/) library for universal components.
+
+## App structure
+
+The project structure is as follows:
+
+```
+/app
+   ├── _layout         # Entry point of the application
+   ├── index      # Main screen
+
+/assets
+   ├── images/          # Image assets
+   ├── fonts/           # Font assets
+
+/components
+   ├── ui/        # gluestack ui shared components
+```
