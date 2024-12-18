@@ -9,10 +9,10 @@ import { ScrollView } from "@/components/ui/scroll-view";
 import { VStack } from "@/components/ui/vstack";
 import DetailCard from "@/features/home/DetailCard";
 import SearchHeader from "@/features/home/SearchHeader";
-import { useState } from "react";
+import { useStateOnLocalStorage } from "@/features/home/useStateOnLocalStorage";
 
 export default function Home() {
-  const [searchTerm, setSearchTerm] = useState("");
+  const [searchTerm, setSearchTerm] = useStateOnLocalStorage("searchTerm", "");
   const { data, isSuccess } = useGetCollection(searchTerm);
 
   return (
