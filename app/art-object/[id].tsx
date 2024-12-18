@@ -1,7 +1,12 @@
 import { useGetArtObjectDetails } from "@/api/collection/hooks";
+import { Box } from "@/components/ui/box";
+import { Grid, GridItem } from "@/components/ui/grid";
+import { Heading } from "@/components/ui/heading";
 import { Image } from "@/components/ui/image";
 import { SafeAreaView } from "@/components/ui/safe-area-view";
 import { ScrollView } from "@/components/ui/scroll-view";
+import { Text } from "@/components/ui/text";
+import { VStack } from "@/components/ui/vstack";
 import PLATFORM from "@/constants/platform";
 import { useNavigation } from "expo-router";
 import { useLocalSearchParams } from "expo-router/build/hooks";
@@ -35,6 +40,42 @@ function ArtObject() {
             source={data.imageUrl}
             alt={data.title}
           />
+          <VStack className="px-4 pt-2">
+            <Grid
+              className="gap-y-6 gap-x-10 pb-4"
+              _extra={{
+                className: "grid-cols-12",
+              }}
+            >
+              <GridItem
+                _extra={{
+                  className: "col-span-12 md:col-span-8 lg:col-span-8",
+                }}
+              >
+                <Box className="bg-background-1 p-4 pb-0">
+                  <Heading className="pb-2" size="2xl">
+                    {data.title}
+                  </Heading>
+                  <Heading className="pb-2" size="md">
+                    {data.subtitle}
+                  </Heading>
+                  <Text size="lg" className="max-w-prose">
+                    {data.shortDescription}
+                  </Text>
+                </Box>
+              </GridItem>
+              <GridItem
+                _extra={{
+                  className: "col-span-12 md:col-span-4 lg:col-span-4",
+                }}
+              >
+                <VStack
+                  className="bg-background-1 p-4 pb-0"
+                  space="xl"
+                ></VStack>
+              </GridItem>
+            </Grid>
+          </VStack>
         </ScrollView>
       </SafeAreaView>
     )
