@@ -8,6 +8,7 @@ import { Stack } from "expo-router";
 import * as SplashScreen from "expo-splash-screen";
 import { useEffect } from "react";
 import "../global.css";
+import Loader from "@/components/loader";
 
 export { ErrorBoundary } from "expo-router";
 
@@ -42,6 +43,7 @@ function RootLayoutNav() {
   return (
     <QueryClientProvider client={queryClient}>
       <GluestackUIProvider mode="light">
+        <Loader />
         <Stack screenOptions={{ headerShown: PLATFORM.IS_MOBILE }}>
           <Stack.Screen
             name="index"
